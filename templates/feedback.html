@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST">
+  <p>Mohon berikan feedback agar sistem kami bisa lebih baik:</p>
+  <input type="text" name="ticket" placeholder="Kode Ticket" required /><br />
+  <textarea name="comment" rows="4" cols="50" required></textarea><br />
+  <button type="submit">Kirim Feedback</button>
+</form>
+{% endblock %}

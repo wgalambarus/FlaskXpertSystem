@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Diagnosa Selesai{% endblock %}
+    {% block content %}
+    <h2>Hasil Diagnosa - Ticket {{ ticket }}</h2>
+
+    <ul>
+    {% for qa in qa_history %}
+        <li><strong>{{ qa.question }}</strong><br/>
+            Jawaban: <em>{{ qa.answer }}</em>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('index') }}">Kembali ke Halaman Utama</a>
+    {% endblock %}  

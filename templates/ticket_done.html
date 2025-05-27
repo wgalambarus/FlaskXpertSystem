@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Diagnosa Selesai{% endblock %}
+
+{% block content %}
+
+    <h2>Diagnosa Berhasil!</h2>
+    <p>Kode Ticket Anda: <strong>{{ ticket }}</strong></p>
+    <p>Simpan kode ticket ini untuk melihat hasil diagnosa kembali.</p>
+
+    <a href="{{ url_for('index') }}">Kembali ke Halaman Utama</a>
+{% endblock %}
+
+

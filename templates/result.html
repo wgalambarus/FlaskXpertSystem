@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<p><strong>Hasil Diagnosis:</strong></p>
+<p>{{ result|safe }}</p>
+
+<form method="POST" action="{{ url_for('confirm') }}">
+  <p>Apakah hasil diagnosis sudah tepat?</p>
+  <button name="confirm" value="ya" type="submit">Ya</button>
+  <button name="confirm" value="tidak" type="submit">Tidak</button>
+</form>
+{% endblock %}
+q

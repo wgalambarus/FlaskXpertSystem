@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST">
+  <p><strong>{{ question }}</strong></p>
+  {% for opt in options %}
+    <label><input type="radio" name="answer" value="{{ opt }}" required /> {{ opt }}</label><br />
+  {% endfor %}
+  <button type="submit">Lanjut</button>
+</form>
+{% endblock %}

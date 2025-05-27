@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Glosarium: {{ term }}</h2>
+<p>{{ description }}</p>
+<a href="{{ url_for('index') }}">Kembali ke halaman utama</a>
+{% endblock %}

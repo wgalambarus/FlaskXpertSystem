@@ -3,21 +3,93 @@
 <head>
     <meta charset="UTF-8" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <title>{% block title %}Sistem Diagnosa{% endblock %}</title>
+    <script defer>
+    function toggleMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+    </script>
 </head>
 <body class="min-h-screen bg-gray-100 text-gray-800">
-    <header class="bg-white shadow p-4 mb-4">
-        <h1 class="text-2xl font-bold text-center">Sistem Diagnosa Expert System</h1>
-    </header>
 
-    <main class="max-w-4xl mx-auto p-4">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full z-30 top-0">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo & Brand -->
+            <div class="flex items-center">
+                <img src="../static/logo2-removebg-preview.png" alt="logo" class="h-10 w-10  object-contain ">
+                <span class="text-xl font-bold text-green-700">RiceScan</span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-10 text-base font-medium text-gray-700">
+                <a href="{{ url_for('start_diagnosis') }}" class="hover:text-green-600 transition">Diagnosa</a>
+                <a href="" class="hover:text-green-600 transition">Glosarium</a>
+                <a href="{{ url_for('input_ticket') }}" class="hover:text-green-600 transition">Riwayat</a>
+            </nav>
+
+            <!-- Right Side Button (Desktop) -->
+            <div class="hidden md:block">
+                <a href="{{ url_for('start_diagnosis') }}"
+                class="bg-green-600 text-white px-4 py-2 rounded-md text-sm hover:bg-green-700 transition">
+                    Mulai Diagnosa
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="md:hidden text-gray-700 focus:outline-none text-2xl" onclick="toggleMenu()">☰</button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white px-4 pb-4">
+            <a href="{{ url_for('start_diagnosis') }}" class="block py-2 text-gray-800 hover:text-green-600">Diagnosa</a>
+            <a href="#" class="block py-2 text-gray-800 hover:text-green-600">Glosarium</a>
+            <a href="{{ url_for('input_ticket') }}" class="block py-2 text-gray-800 hover:text-green-600">Riwayat</a>
+            <a href="{{ url_for('start_diagnosis') }}" class="block mt-2 bg-green-600 text-white text-center py-2 rounded-md hover:bg-green-700 transition">
+                Mulai Diagnosa
+            </a>
+        </div>
+    </header>
+    <!-- Body -->
+    <main class=>
         {% block content %}{% endblock %}
     </main>
-
-    <footer class="bg-white shadow p-4 mt-8 text-center text-sm text-gray-500">
-        &copy; 2025 Sistem Diagnosa. All rights reserved.
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 px-4">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+        <h3 class="text-2xl font-bold mb-2">Rice Scan</h3>
+        <p class="text-sm text-gray-400">Teknologi pendeteksi penyakit padi menggunakan expert system</p>
+        </div>
+        <div>
+        <h4 class="text-lg font-semibold mb-3">Navigasi</h4>
+        <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-green-400">Diagnosa</a></li>
+            <li><a href="#" class="hover:text-green-400">Glosarium</a></li>
+            <li><a href="#" class="hover:text-green-400">Riwayat</a></li>
+        </ul>
+        </div>
+        <div>
+        <h4 class="text-lg font-semibold mb-3">Kontak</h4>
+        <ul class="text-sm text-gray-400 space-y-1">
+            <li>Email: <a href="mailto:ricescan@mail.com" class="text-white hover:text-green-400">ricescan@mail.com</a></li>
+            <li>WhatsApp: <a href="#" class="text-white hover:text-green-400">+62 895-3930-14557</a></li>
+            <li>Alamat: Jl. Alumni No.3, Padang Bulan, Kec. Medan Baru, Kota Medan, Sumatera Utara 20155</li>
+        </ul>
+        </div>
+        <div>
+        <h4 class="text-lg font-semibold mb-3">Ikuti Kami</h4>
+        <div class="flex space-x-4 text-xl">
+            <a href="#" class="hover:text-green-400">🌐</a>
+            <a href="#" class="hover:text-green-400">📘</a>
+            <a href="#" class="hover:text-green-400">📷</a>
+            <a href="#" class="hover:text-green-400">🐦</a>
+        </div>
+        </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-500">
+        &copy; 2025 Rice Scan. All rights reserved.
+    </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 </html>

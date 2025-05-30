@@ -1,12 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
-<p><strong>Hasil Diagnosis:</strong></p>
-<p>{{ result|safe }}</p>
+<div class="min-h-screen flex items-center justify-center bg-green-50 px-4 py-16">
+  <div class="max-w-xl w-full bg-white rounded-xl shadow-lg p-8 text-center animate-fade-in">
+    <h2 class="text-3xl font-extrabold text-green-700 mb-6">Hasil Diagnosis</h2>
+    <div class="prose prose-green max-w-none mb-8 text-left">
+      {{ result|safe }}
+    </div>
+    <form method="POST" action="{{ url_for('confirm') }}" class="space-y-4">
+      <p class="text-lg font-medium text-gray-800">Apakah hasil diagnosis sudah tepat?</p>
+      <div class="flex justify-center gap-6">
+        <button
+          name="confirm"
+          value="ya"
+          type="submit"
+          class="px-8 py-3 bg-green-600 hover:bg-green-700 text-white rounded-md font-semibold transition duration-300"
+        >
+          Ya
+        </button>
+        <button
+          name="confirm"
+          value="tidak"
+          type="submit"
+          class="px-8 py-3 bg-red-600 hover:bg-red-700 text-white rounded-md font-semibold transition duration-300"
+        >
+          Tidak
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
 
-<form method="POST" action="{{ url_for('confirm') }}">
-  <p>Apakah hasil diagnosis sudah tepat?</p>
-  <button name="confirm" value="ya" type="submit">Ya</button>
-  <button name="confirm" value="tidak" type="submit">Tidak</button>
-</form>
+<style>
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+</style>
 {% endblock %}
-q

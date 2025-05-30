@@ -1,149 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title></title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="font-sans antialiased">
-<header class="absolute top-0 left-0 w-full z-20 bg-transparent">
-  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-    <div class="text-xl font-bold text-white">Martin Padi</div>
-    <nav class="space-x-14 hidden md:flex text-xl font-semibold">
-      <a href="{{ url_for('start_diagnosis') }}" class="text-white hover:text-green-200">Diagnosa</a>
-      <a href="#" class="text-white hover:text-green-200">Glosarium</a>
-      <a href="#" class="text-white hover:text-green-200">Riwayat</a>
-    </nav>
-    <button class="bg-green-600 text-white px-4 py-2 rounded-md">Contact Martin</button>
-  </div>
-</header>
+{% extends "base.html" %}
+{% block content %}
+<body class="font-sans antialiased bg-white">
 
-<section class="relative h-screen bg-cover bg-center flex items-center justify-center text-white" style="background-image: url('https://static.vecteezy.com/system/resources/previews/040/280/846/non_2x/green-grass-on-small-hills-house-on-the-hill-landscape-vector.jpg');">
+<!-- Hero -->
+<section class="relative h-screen bg-cover bg-center flex items-center justify-center text-white text-center animate-fade-in" style="background-image: url('https://static.vecteezy.com/system/resources/previews/040/280/846/non_2x/green-grass-on-small-hills-house-on-the-hill-landscape-vector.jpg');">
   <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-  <div class="relative z-10 text-center max-w-2xl px-4">
-    <h1 class="text-4xl md:text-5xl font-bold mb-6">Deteksi Dini Penyakit Padi Secara Cerdas</h1>
-    <p class="text-lg md:text-xl mb-6">Temukan solusi cepat dan tepat untuk perlindungan tanaman Anda dari serangan penyakit dengan teknologi Expert System.</p>
-    <form class="flex flex-col md:flex-row justify-center items-center gap-4">
-      <input type="text" placeholder="Masukkan gejala atau nama penyakit..." class="w-full md:w-96 px-4 py-2 rounded-md text-gray-900" />
-      <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md">Diagnose</button>
+  <div class="relative z-10 max-w-2xl px-4">
+    <h1 class="text-3xl md:text-5xl font-bold mb-6 animate-fade-in animate-fade-in-delay-1">Deteksi Dini Penyakit Padi Secara Cerdas</h1>
+    <p class="text-lg md:text-xl mb-6 animate-fade-in animate-fade-in-delay-2">Temukan solusi cepat dan tepat untuk perlindungan tanaman Anda dari serangan penyakit dengan teknologi Expert System.</p>
+    <form class="sm:flex-row items-center gap-4 animate-fade-in animate-fade-in-delay-3">
+      <input type="text" placeholder="Masukkan gejala atau nama penyakit..." class="w-full sm:w-80 px-4 py-2 rounded-md text-gray-900" />
+      <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md">Cari</button>
     </form>
   </div>
 </section>
 
-  <!-- Solutions -->
-  <section class="bg-green-50 py-12">
-    <div class="text-center">
-        <h2 class="text-2xl font-bold text-gray-800 mb-4">Solusi Deteksi Penyakit Tanaman Padi Berbasis Sistem Pakar</h2>
-        <p class="max-w-2xl mx-auto text-gray-600 mb-8">
-            Kami memahami tantangan yang dihadapi petani dalam mengenali dan mengatasi penyakit tanaman. Dengan memanfaatkan teknologi sistem pakar, kami menghadirkan solusi cerdas yang dapat membantu petani mendeteksi penyakit padi secara cepat dan akurat, guna mendukung pertanian yang sehat dan berkelanjutan.</p>
+<!-- Solutions -->
+<section class="bg-green-50 py-12 px-4 animate-fade-in-delay">
+  <div class="text-center max-w-3xl mx-auto">
+    <h2 class="text-2xl font-bold text-gray-800 mb-4 animate-fade-in animate-fade-in-delay-1">Solusi Deteksi Penyakit Tanaman Padi Berbasis Sistem Pakar</h2>
+    <p class="text-gray-600 mb-8 animate-fade-in animate-fade-in-delay-2">Sistem pakar kami dirancang untuk membantu petani mengidentifikasi penyakit padi secara cepat dan tepat, sehingga keputusan penanganan bisa diambil lebih dini untuk meminimalkan kerugian.</p>
+  </div>
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-white p-6 rounded-lg shadow animate-slide-up animate-fade-in-delay-3">
+      <h3 class="font-semibold mb-2 animate-fade-in animate-fade-in-delay-4">Noda Palsu</h3>
+      <p class="text-gray-600 animate-fade-in animate-fade-in-delay-5">False Smut ditandai oleh munculnya bola hijau kekuningan pada malai padi. Jika tidak ditangani, dapat menurunkan kualitas hasil panen secara signifikan.</p>
     </div>
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h3 class="font-semibold mb-2">Noda Palsu</h3>
-        <p class="text-gray-600">Penyakit Noda Palsu (False Smut) adalah salah satu penyakit yang menyerang tanaman padi dan disebabkan oleh jamur Ustilaginoidea virens. Meskipun namanya "noda palsu", penyakit ini nyata dan dapat menyebabkan kerugian hasil panen, terutama dalam kondisi lingkungan yang lembap dan subur.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h3 class="font-semibold mb-2">Hawar Daun Jingga</h3>
-        <p class="text-gray-600">Hawar Daun Jingga adalah salah satu penyakit penting pada tanaman padi yang disebabkan oleh jamur Bipolaris oryzae. Penyakit ini juga dikenal dengan nama lain bercak coklat daun atau dalam bahasa Inggris disebut Brown Spot Disease, meskipun kadang dibedakan tergantung intensitas dan gejala.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow">
-        <h3 class="font-semibold mb-2">Penyakit Gila Tumbuh</h3>
-        <p class="text-gray-600">Penyakit gila tumbuh adalah salah satu penyakit utama pada tanaman padi yang disebabkan oleh jamur Fusarium fujikuroi. Nama "bakanae" berasal dari bahasa Jepang yang berarti "tumbuh bodoh" atau "tumbuh tidak normal", menggambarkan gejala utama tanaman yang tumbuh terlalu tinggi secara abnormal namun lemah dan akhirnya mati.</p>
-      </div>
+    <div class="bg-white p-6 rounded-lg shadow animate-slide-up animate-fade-in-delay-4">
+      <h3 class="font-semibold mb-2 animate-fade-in animate-fade-in-delay-5">Hawar Daun Jingga</h3>
+      <p class="text-gray-600 animate-fade-in animate-fade-in-delay-6">Merupakan penyakit yang cepat menyebar, ditandai oleh bercak oranye pada daun. Deteksi dini sangat penting untuk mencegah kerusakan tanaman secara luas.</p>
     </div>
-  </section>
-
-  <!-- Empowerment -->
-<section class="py-12">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4">
-    <img src="https://awsimages.detik.net.id/community/media/visual/2021/11/12/puan-maharani-dok-istimewa_169.jpeg?w=1200" alt="Petani" class="rounded-lg shadow" />
-    <div>
-      <h2 class="text-2xl font-bold text-gray-900 mb-4">Memberdayakan Perubahan Lokal untuk Dampak Global</h2>
-      <p class="text-gray-700 mb-4">Kami percaya bahwa perubahan yang bertahan lama dimulai dari tingkat lokal. Dengan melibatkan dan menggerakkan komunitas, kami memberdayakan individu untuk mengambil tindakan di lingkungan mereka sendiri dan lebih luas lagi.</p>
-      <button class="bg-green-600 text-white px-6 py-2 rounded-md">Learn More</button>
+    <div class="bg-white p-6 rounded-lg shadow animate-slide-up animate-fade-in-delay-5">
+      <h3 class="font-semibold mb-2 animate-fade-in animate-fade-in-delay-6">Penyakit Gila Tumbuh</h3>
+      <p class="text-gray-600 animate-fade-in animate-fade-in-delay-7">Ditandai oleh pertumbuhan abnormal dan pemanjangan tanaman. Penyakit ini sering sulit dikenali tanpa bantuan sistem pendeteksi yang akurat.</p>
     </div>
   </div>
 </section>
 
-
-  <!-- Testimonials -->
-  <section class="bg-green-900 text-white py-12">
-    <div class="text-center mb-8">
-      <h2 class="text-2xl font-semibold">Browse through Customer Feedback and Experiences</h2>
-    </div>
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-      <div class="bg-white text-gray-900 p-4 rounded-lg">
-        <p class="mb-2 italic">"The agriculture website was so informative and easy to use!"</p>
-        <p class="text-sm font-semibold">- Martin</p>
-      </div>
-      <div class="bg-white text-gray-900 p-4 rounded-lg">
-        <p class="mb-2 italic">"I stumbled upon the platform while researching organic farming. A gem!"</p>
-        <p class="text-sm font-semibold">- Anugerah</p>
-      </div>
-      <div class="bg-white text-gray-900 p-4 rounded-lg">
-        <p class="mb-2 italic">"The solution has truly improved our farming efficiency."</p>
-        <p class="text-sm font-semibold">- Dominick</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Newsletter -->
-  <section class="bg-white py-12 text-center">
-    <h2 class="text-xl font-bold text-gray-900 mb-2">Collaborate with Aggro to Shape the Future of Farming</h2>
-    <p class="text-gray-600 mb-6">By connecting with Aggro, you open the doors to a world of possibilities.</p>
-    <form class="max-w-xl mx-auto flex justify-center">
-      <input type="email" placeholder="Enter email" class="border border-gray-300 rounded-l-md px-4 py-2 w-full" />
-      <button class="bg-green-600 text-white px-6 rounded-r-md">Search</button>
-    </form>
-  </section>
-
-<!-- Footer -->
-<footer class="bg-gray-900 text-white py-8">
-  <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-    
-    <!-- Logo & Tagline -->
+<!-- Empowerment -->
+<section class="py-12 px-4 animate-fade-in-delay-2">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <img src="https://awsimages.detik.net.id/community/media/visual/2021/11/12/puan-maharani-dok-istimewa_169.jpeg?w=1200" alt="Petani" class="rounded-lg shadow w-full h-auto animate-fade-in animate-fade-in-delay-3" />
     <div>
-      <h3 class="text-2xl font-bold mb-2">Aggro</h3>
-      <p class="text-sm text-gray-400">Teknologi untuk masa depan pertanian berkelanjutan dan deteksi penyakit padi yang cerdas.</p>
-    </div>
-
-    <!-- Navigation -->
-    <div>
-      <h4 class="text-lg font-semibold mb-3">Navigasi</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a href="" class="hover:text-green-400">Diagnosa</a></li>
-        <li><a href="#" class="hover:text-green-400">Glosarium</a></li>
-        <li><a href="#" class="hover:text-green-400">Riwayat</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact Info -->
-    <div>
-      <h4 class="text-lg font-semibold mb-3">Kontak</h4>
-      <ul class="text-sm text-gray-400 space-y-1">
-        <li>Email: <a href="mailto:info@aggro.id" class="text-white hover:text-green-400">info@aggro.id</a></li>
-        <li>WhatsApp: <a href="#" class="text-white hover:text-green-400">+62 812-3456-7890</a></li>
-        <li>Alamat: Jl. Tani Cerdas No. 123, Yogyakarta</li>
-      </ul>
-    </div>
-
-    <!-- Social -->
-    <div>
-      <h4 class="text-lg font-semibold mb-3">Ikuti Kami</h4>
-      <div class="flex space-x-4 text-xl">
-        <a href="#" class="hover:text-green-400">🌐</a>
-        <a href="#" class="hover:text-green-400">📘</a>
-        <a href="#" class="hover:text-green-400">📷</a>
-        <a href="#" class="hover:text-green-400">🐦</a>
-      </div>
+      <h2 class="text-2xl font-bold text-gray-900 mb-4 animate-fade-in animate-fade-in-delay-4">Memberdayakan Perubahan Lokal untuk Dampak Global</h2>
+      <p class="text-gray-700 mb-4 animate-fade-in animate-fade-in-delay-5">Kami percaya bahwa perubahan yang berkelanjutan dimulai dari komunitas dari para petani, pengajar, dan inovator yang memahami kebutuhan di lapangan.</p>
     </div>
   </div>
+</section>
 
-  <div class="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-500">
-    &copy; 2025 Aggro. All rights reserved.
-  </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+<!-- Animations -->
+<style>
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+.animate-fade-in-delay {
+  animation: fade-in 1s ease-out 0.3s forwards;
+}
+.animate-fade-in-delay-1 {
+  animation: fade-in 0.8s ease-out 0.2s forwards;
+}
+.animate-fade-in-delay-2 {
+  animation: fade-in 0.8s ease-out 0.4s forwards;
+}
+.animate-fade-in-delay-3 {
+  animation: fade-in 0.8s ease-out 0.6s forwards;
+}
+.animate-fade-in-delay-4 {
+  animation: fade-in 0.8s ease-out 0.8s forwards;
+}
+.animate-fade-in-delay-5 {
+  animation: fade-in 0.8s ease-out 1s forwards;
+}
+.animate-fade-in-delay-6 {
+  animation: fade-in 0.8s ease-out 1.2s forwards;
+}
+.animate-fade-in-delay-7 {
+  animation: fade-in 0.8s ease-out 1.4s forwards;
+}
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}
+</style>
 </body>
-</html>
+{% endblock %}

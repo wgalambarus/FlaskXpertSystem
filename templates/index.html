@@ -8,34 +8,165 @@
   <div class="relative z-10 max-w-2xl px-4">
     <h1 class="text-3xl md:text-5xl font-bold mb-6 animate-fade-in animate-fade-in-delay-1">Deteksi Dini Penyakit Padi Secara Cerdas</h1>
     <p class="text-lg md:text-xl mb-6 animate-fade-in animate-fade-in-delay-2">Temukan solusi cepat dan tepat untuk perlindungan tanaman Anda dari serangan penyakit dengan teknologi Expert System.</p>
-    <form class="sm:flex-row items-center gap-4 animate-fade-in animate-fade-in-delay-3">
-      <input type="text" placeholder="Masukkan gejala atau nama penyakit..." class="w-full sm:w-80 px-4 py-2 rounded-md text-gray-900" />
-      <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md">Cari</button>
-    </form>
+      <a href="{{ url_for('start_diagnosis') }}"
+          class="bg-green-600 text-white px-5 py-2 rounded-md text-sm hover:bg-green-700 transition">
+        Mulai Diagnosa
+    </a>
+  </div>
+</section>
+<!-- Identifikasi Penyakit (Slider) -->
+<section class="bg-white py-12 px-4">
+  <div class="max-w-6xl mx-auto text-center mb-8">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Penyakit Padi yang Dapat Dideteksi</h2>
+    <p class="text-gray-600 mt-2">Kenali berbagai jenis penyakit padi yang dapat kami identifikasi melalui gejala-gejala yang Anda masukkan.</p>
+  </div>
+
+  <!-- Slider -->
+  <div class="overflow-x-auto flex gap-6 px-2 pb-4 snap-x snap-mandatory scroll-smooth">
+    <!-- Slide Items -->
+
+    <!-- Rice Sheath Blight -->
+    <div class="flex-shrink-0 w-72 snap-center bg-green-50 rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-800">Rice Sheath Blight</h3>
+      <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1 text-left">
+        <li>Bercak oval pada pelepah</li>
+        <li>Daun mengering & rebah</li>
+        <li>Penyebab gagal panen</li>
+      </ul>
+    </div>
+
+    <!-- Blast -->
+    <div class="flex-shrink-0 w-72 snap-center bg-green-50 rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-800">Blast</h3>
+      <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1 text-left">
+        <li>Bintik air membesar jadi lesi</li>
+        <li>Tepi lesi coklat kemerahan</li>
+        <li>Sering muncul saat lembab</li>
+      </ul>
+    </div>
+
+    <!-- Bacterial Leaf Blight -->
+    <div class="flex-shrink-0 w-72 snap-center bg-green-50 rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-800">Bacterial Leaf Blight</h3>
+      <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1 text-left">
+        <li>Daun kering dari ujung ke bawah</li>
+        <li>Lendir bakteri muncul saat dipotong</li>
+        <li>Menyebabkan kerontokan daun</li>
+      </ul>
+    </div>
+
+    <!-- Bakanae -->
+    <div class="flex-shrink-0 w-72 snap-center bg-green-50 rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-800">Bakanae</h3>
+      <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1 text-left">
+        <li>Tanaman tumbuh tinggi abnormal</li>
+        <li>Daun menguning dan layu</li>
+        <li>Akar busuk dan mudah tercabut</li>
+      </ul>
+    </div>
+
+    <!-- Gosong Palsu -->
+    <div class="flex-shrink-0 w-72 snap-center bg-green-50 rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-800">Gosong Palsu</h3>
+      <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1 text-left">
+        <li>Terdapat bola hijau pada malai</li>
+        <li>Bola berubah warna jadi kuning/abu</li>
+        <li>Tidak menghasilkan bulir</li>
+      </ul>
+    </div>
+
+    <!-- Bercak Cokelat Sempit -->
+    <div class="flex-shrink-0 w-72 snap-center bg-green-50 rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-800">Bercak Cokelat Sempit</h3>
+      <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1 text-left">
+        <li>Lesi kecil sempit memanjang</li>
+        <li>Warna coklat kemerahan</li>
+        <li>Daun bisa mengering seluruhnya</li>
+      </ul>
+    </div>
+
+    <!-- Bercak Cokelat -->
+    <div class="flex-shrink-0 w-72 snap-center bg-green-50 rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-800">Bercak Cokelat</h3>
+      <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1 text-left">
+        <li>Bercak bulat hingga oval cokelat</li>
+        <li>Pusat lesi abu-abu</li>
+        <li>Muncul pada daun, batang & gabah</li>
+      </ul>
+    </div>
+
+    <!-- Bercak Kresek -->
+    <div class="flex-shrink-0 w-72 snap-center bg-green-50 rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-800">Bercak Kresek</h3>
+      <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1 text-left">
+        <li>Daun mengering dari tepi</li>
+        <li>Gejala mirip luka sobek</li>
+        <li>Sering terjadi setelah hujan</li>
+      </ul>
+    </div>
+
+    <!-- Daun Merah -->
+    <div class="flex-shrink-0 w-72 snap-center bg-green-50 rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-800">Daun Merah</h3>
+      <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1 text-left">
+        <li>Daun memerah dari ujung</li>
+        <li>Tanaman tumbuh kerdil</li>
+        <li>Malai tidak terbentuk sempurna</li>
+      </ul>
+    </div>
+
+    <!-- Tungro -->
+    <div class="flex-shrink-0 w-72 snap-center bg-green-50 rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-800">Tungro</h3>
+      <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1 text-left">
+        <li>Daun menguning dari bawah</li>
+        <li>Tepi daun berubah cokelat</li>
+        <li>Tanaman kerdil dan telat berbunga</li>
+      </ul>
+    </div>
+
+    <!-- Rumput Kerdil -->
+    <div class="flex-shrink-0 w-72 snap-center bg-green-50 rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-800">Rumput Kerdil</h3>
+      <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1 text-left">
+        <li>Tinggi tanaman seperti rumput</li>
+        <li>Daun sempit dan pendek</li>
+        <li>Malai tidak terbentuk</li>
+      </ul>
+    </div>
+
+    <!-- Leaf Scald -->
+    <div class="flex-shrink-0 w-72 snap-center bg-green-50 rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-800">Leaf Scald</h3>
+      <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1 text-left">
+        <li>Lesi putih panjang seperti terbakar</li>
+        <li>Pola zonasi khas</li>
+        <li>Daun cepat mengering</li>
+      </ul>
+    </div>
+
+    <!-- Rice False Smut -->
+    <div class="flex-shrink-0 w-72 snap-center bg-green-50 rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-800">Rice False Smut</h3>
+      <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1 text-left">
+        <li>Gabah berubah jadi bola hijau</li>
+        <li>Muncul spora kuning keemasan</li>
+        <li>Tidak menghasilkan padi</li>
+      </ul>
+    </div>
+
+    <!-- Stem Rot -->
+    <div class="flex-shrink-0 w-72 snap-center bg-green-50 rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold mb-2 text-green-800">Stem Rot</h3>
+      <ul class="text-sm text-gray-700 list-disc pl-5 space-y-1 text-left">
+        <li>Pangkal batang membusuk</li>
+        <li>Daun menguning dan tanaman roboh</li>
+        <li>Malai kosong</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- Solutions -->
-<section class="bg-green-50 py-12 px-4 animate-fade-in-delay">
-  <div class="text-center max-w-3xl mx-auto">
-    <h2 class="text-2xl font-bold text-gray-800 mb-4 animate-fade-in animate-fade-in-delay-1">Solusi Deteksi Penyakit Tanaman Padi Berbasis Sistem Pakar</h2>
-    <p class="text-gray-600 mb-8 animate-fade-in animate-fade-in-delay-2">Sistem pakar kami dirancang untuk membantu petani mengidentifikasi penyakit padi secara cepat dan tepat, sehingga keputusan penanganan bisa diambil lebih dini untuk meminimalkan kerugian.</p>
-  </div>
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="bg-white p-6 rounded-lg shadow animate-slide-up animate-fade-in-delay-3">
-      <h3 class="font-semibold mb-2 animate-fade-in animate-fade-in-delay-4">Noda Palsu</h3>
-      <p class="text-gray-600 animate-fade-in animate-fade-in-delay-5">False Smut ditandai oleh munculnya bola hijau kekuningan pada malai padi. Jika tidak ditangani, dapat menurunkan kualitas hasil panen secara signifikan.</p>
-    </div>
-    <div class="bg-white p-6 rounded-lg shadow animate-slide-up animate-fade-in-delay-4">
-      <h3 class="font-semibold mb-2 animate-fade-in animate-fade-in-delay-5">Hawar Daun Jingga</h3>
-      <p class="text-gray-600 animate-fade-in animate-fade-in-delay-6">Merupakan penyakit yang cepat menyebar, ditandai oleh bercak oranye pada daun. Deteksi dini sangat penting untuk mencegah kerusakan tanaman secara luas.</p>
-    </div>
-    <div class="bg-white p-6 rounded-lg shadow animate-slide-up animate-fade-in-delay-5">
-      <h3 class="font-semibold mb-2 animate-fade-in animate-fade-in-delay-6">Penyakit Gila Tumbuh</h3>
-      <p class="text-gray-600 animate-fade-in animate-fade-in-delay-7">Ditandai oleh pertumbuhan abnormal dan pemanjangan tanaman. Penyakit ini sering sulit dikenali tanpa bantuan sistem pendeteksi yang akurat.</p>
-    </div>
-  </div>
-</section>
 
 <!-- Empowerment -->
 <section class="py-12 px-4 animate-fade-in-delay-2">

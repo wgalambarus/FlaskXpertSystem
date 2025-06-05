@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Glosarium: {{ term }}</h2>
+<h1>{{ term|capitalize }}</h1>
 <p>{{ description }}</p>
-<a href="{{ url_for('index') }}">Kembali ke halaman utama</a>
+{% if wiki %}
+    <a href="{{ wiki }}" target="_blank" class="text-blue-600 underline">Lihat di Wikipedia</a><br>
+{% endif %}
+<a href="{{ url_for('index') }}">Kembali ke Beranda</a>
 {% endblock %}

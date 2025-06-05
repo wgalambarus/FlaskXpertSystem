@@ -5,6 +5,17 @@
     <h2 class="text-3xl font-extrabold text-green-700 mb-6">Hasil Diagnosis</h2>
     <div class="prose prose-green max-w-none mb-8 text-left">
       {{ result|safe }}
+      {% if confidence is defined %}
+      <div class="mt-4 p-3 bg-blue-100 border-l-4 border-blue-500 rounded text-blue-900">
+        <strong>Confidence Score:</strong> {{ confidence }}%
+      </div>
+      {% endif %}
+      {% if solusi  %}
+      <div class="mt-6 p-4 bg-green-100 border-l-4 border-green-500 rounded text-green-900">
+        <strong>Solusi/Saran Penanganan:</strong><br>
+        {{ solusi|safe }}
+      </div>
+      {% endif %}
     </div>
     <form method="POST" action="{{ url_for('confirm') }}" class="space-y-4">
       <p class="text-lg font-medium text-gray-800">Apakah hasil diagnosis sudah tepat?</p>
@@ -37,6 +48,18 @@
 }
 .animate-fade-in {
   animation: fade-in 0.8s ease-out forwards;
+}
+.glossary-link {
+  color: #15803d;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.glossary-link:hover {
+  color: #166534;
+  text-decoration-thickness: 2px;
 }
 </style>
 {% endblock %}

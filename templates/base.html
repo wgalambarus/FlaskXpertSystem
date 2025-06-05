@@ -24,7 +24,6 @@
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex space-x-10 text-base font-medium text-gray-700">
                 <a href="{{ url_for('start_diagnosis') }}" class="hover:text-green-600 transition">Diagnosa</a>
-                <a href="" class="hover:text-green-600 transition">Glosarium</a>
                 <a href="{{ url_for('input_ticket') }}" class="hover:text-green-600 transition">Riwayat</a>
             </nav>
 
@@ -43,7 +42,6 @@
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="md:hidden hidden bg-white px-4 pb-4">
             <a href="{{ url_for('start_diagnosis') }}" class="block py-2 text-gray-800 hover:text-green-600">Diagnosa</a>
-            <a href="#" class="block py-2 text-gray-800 hover:text-green-600">Glosarium</a>
             <a href="{{ url_for('input_ticket') }}" class="block py-2 text-gray-800 hover:text-green-600">Riwayat</a>
             <a href="{{ url_for('start_diagnosis') }}" class="block mt-2 bg-green-600 text-white text-center py-2 rounded-md hover:bg-green-700 transition">
                 Mulai Diagnosa

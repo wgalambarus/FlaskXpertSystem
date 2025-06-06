@@ -24,3 +24,7 @@ venv\Scripts\activate for windows
 source venv/bin/activate for mac/Linux
 pip install -r requirements.txt
 python app.py
+
+Make A virtual environment first
+Install flask, sqlalchemy and 
+run the project with python app.py

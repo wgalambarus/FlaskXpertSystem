@@ -31,7 +31,7 @@ client = ChatCompletionsClient(
 class SolvedCase(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     ticket = db.Column(db.String(12), unique=True, nullable=False)
-    history = db.Column(db.Text, nullable=False)  # Store history as comma separated keys
+    history = db.Column(db.Text, nullable=False)
 
 class Feedback(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -39,7 +39,7 @@ class Feedback(db.Model):
     comment = db.Column(db.Text, nullable=False)
 
 
-# --- EXPERT SYSTEM NODES (unchanged) ---
+# Struktur node Enhanced Multiway Decision Tree with Confirmation Layer
 NODES = {
   "start": {
     "question": "Apakah nampak bercak pada padi?",
@@ -449,7 +449,7 @@ NODES = {
 }
 
 
-# GLOSSARY sekarang berisi mapping kata ke deskripsi dan link Wikipedia
+# GLOSSARY buat kata kunci yang susah dimengerti oleh petani
 GLOSSARY = {
     "blast": {
         "desc": "Blast adalah penyakit pada padi yang disebabkan oleh jamur Pyricularia oryzae.",
@@ -485,11 +485,11 @@ GLOSSARY = {
     },
     "narrow brown leaf spot": {
         "desc": "Narrow Brown Leaf Spot adalah penyakit yang disebabkan oleh jamur Cercospora janseana, ditandai dengan bercak coklat sempit pada daun.",
-        "wiki": "http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/narrow-brown-leaf-spot"
+        "wiki": "http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/narrow-brown-spot"
     },
     "rice grassy stunt virus": {
         "desc": "Rice Grassy Stunt Virus adalah penyakit virus yang ditularkan oleh wereng, ditandai dengan tanaman kerdil dan daun menggulung.",
-        "wiki": "http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/rice-grassy-stunt-virus"
+        "wiki": "http://www.knowledgebank.irri.org/training/fact-sheets/pest-management/diseases/item/rice-grassy-stunt"
     },
     "stem rot": {
         "desc": "Stem Rot adalah penyakit yang disebabkan oleh jamur Sclerotium oryzae, ditandai dengan pembusukan batang padi.",
